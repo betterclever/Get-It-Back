@@ -193,6 +193,11 @@ public class ReportFound extends javax.swing.JFrame {
         Reset.setBackground(new java.awt.Color(255, 153, 0));
         Reset.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
         getContentPane().add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 526, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -399,6 +404,22 @@ public class ReportFound extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_ConfirmButtonActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+        // TODO add your handling code here:
+        BrandNameTf.setText("");
+        CategoryCB.setSelectedIndex(0);
+        ConfirmButton.setEnabled(false);
+        DateTf.setText("");
+        LocationTf.setText("");
+        NameTf.setText("");
+        DefaultListModel listModel = new DefaultListModel();
+        ResultList.setModel(listModel);
+        articleNameTf.setText("");
+        mNumberTf.setText("");
+        person = "";
+        pnumber = "";
+    }//GEN-LAST:event_ResetActionPerformed
 
     /**
      * @param args the command line arguments

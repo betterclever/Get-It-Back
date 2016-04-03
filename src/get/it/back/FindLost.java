@@ -200,6 +200,11 @@ public class FindLost extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 153));
         jButton3.setText("Reset");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 491, 71, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/get/it/back/still_alive_1920x1080.png"))); // NOI18N
@@ -399,6 +404,21 @@ public class FindLost extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_confirmButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        brandTf.setText("");
+        CategoryCB.setSelectedIndex(0);
+        confirmButton.setEnabled(false);
+        LostDateTf.setText("");
+        LocationTf.setText("");
+        DefaultListModel listModel = new DefaultListModel();
+        ResultList.setModel(listModel);
+        articleNameTf.setText("");
+        person = "";
+        pnumber = "";
+        jTextArea1.setText("");
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
