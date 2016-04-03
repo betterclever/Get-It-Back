@@ -1,0 +1,40 @@
+
+FoundItems
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| ItemID          | int(20)     | NO   | PRI | NULL    |       |
+| ArticleName     | varchar(50) | YES  |     | NULL    |       |
+| ArticleBrand    | varchar(20) | YES  |     | NULL    |       |
+| Category        | varchar(20) | YES  |     | NULL    |       |
+| FoundDate       | varchar(20) | YES  |     | NULL    |       |
+| FoundLocation   | varchar(20) | YES  |     | NULL    |       |
+| PersonToContact | varchar(30) | YES  |     | NULL    |       |
+| ContactNumber   | varchar(10) | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+LostItems
+
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| ItemID          | int(20)     | NO   | PRI | NULL    |       |
+| ArticleName     | varchar(50) | YES  |     | NULL    |       |
+| ArticleBrand    | varchar(20) | YES  |     | NULL    |       |
+| Category        | varchar(20) | YES  |     | NULL    |       |
+| LostDate        | varchar(20) | YES  |     | NULL    |       |
+| LostLocation    | varchar(20) | YES  |     | NULL    |       |
+| PersonToContact | varchar(30) | YES  |     | NULL    |       |
+| ContactNumber   | varchar(10) | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+
+login
+
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| username | varchar(50) | NO   | PRI | NULL    |       |
+| password | varchar(50) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
