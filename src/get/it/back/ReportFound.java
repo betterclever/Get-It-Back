@@ -83,73 +83,73 @@ public class ReportFound extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Report A Found Item");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 18, 740, 45));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Article Name");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 74, 195, -1));
 
-        articleNameTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        articleNameTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(articleNameTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 75, 350, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Select Category");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 102, 179, -1));
 
-        CategoryCB.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        CategoryCB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CategoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Identity Proof", "Watch", "Mobile Phone", "Wallet/Purse", "Bags", "Others" }));
         getContentPane().add(CategoryCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 103, 350, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Brand Name");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 130, 179, -1));
 
-        BrandNameTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        BrandNameTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(BrandNameTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 131, 350, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Found Date (DD-MM-YY)");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 158, 179, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 158, 200, -1));
 
-        DateTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        DateTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(DateTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 159, 350, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Found Location");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 186, 179, -1));
 
-        LocationTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        LocationTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(LocationTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 187, 350, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Enter your Contact Details");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 226, 563, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Name");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 266, 209, -1));
 
-        NameTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        NameTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(NameTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 267, 351, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Mobile Number");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 294, 209, -1));
 
-        mNumberTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        mNumberTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(mNumberTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 295, 351, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 153, 0));
@@ -181,6 +181,7 @@ public class ReportFound extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 401, 340, 107));
 
         ConfirmButton.setBackground(new java.awt.Color(255, 153, 0));
+        ConfirmButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         ConfirmButton.setText("Confirm Button");
         ConfirmButton.setEnabled(false);
         ConfirmButton.addActionListener(new java.awt.event.ActionListener() {
@@ -188,10 +189,10 @@ public class ReportFound extends javax.swing.JFrame {
                 ConfirmButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(ConfirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 528, 125, -1));
+        getContentPane().add(ConfirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 528, 140, -1));
 
         Reset.setBackground(new java.awt.Color(255, 153, 0));
-        Reset.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        Reset.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Reset.setText("Reset");
         Reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,20 +201,20 @@ public class ReportFound extends javax.swing.JFrame {
         });
         getContentPane().add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 526, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 153));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("More Details");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 365, 353, -1));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 153));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Found Results");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 369, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/get/it/back/summer_lights_wallpaper_hd_by_jelinjer-d7bl33e (1).jpg"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
