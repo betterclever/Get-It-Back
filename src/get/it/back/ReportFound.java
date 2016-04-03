@@ -191,6 +191,8 @@ public class ReportFound extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Found Results");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 365, 369, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/get/it/back/summer_lights_wallpaper_hd_by_jelinjer-d7bl33e (1).jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
 
         pack();
