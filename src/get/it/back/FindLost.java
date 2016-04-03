@@ -248,7 +248,7 @@ public class FindLost extends javax.swing.JFrame {
                 ArticleBrand = "Not Specified";
             }
 
-
+            
             System.out.println(query);
             ResultSet rs = statement.executeQuery(query);
 
@@ -337,7 +337,7 @@ public class FindLost extends javax.swing.JFrame {
                 rs.close();
                 statement.close();
                 conn.close();
-
+                
             }
             confirmButton.setEnabled(false);
         } catch (SQLException ex) {
@@ -354,6 +354,43 @@ public class FindLost extends javax.swing.JFrame {
     private void ResultListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ResultListValueChanged
         // TODO add your handling code here:
         
+        String ArticleName = ResultList.getSelectedValue();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String uid = "root";
+            String pwd = "clever";
+            String dbURL = "jdbc:mysql://localhost/getitback";
+            Connection conn = DriverManager.getConnection(dbURL, uid, pwd);
+            Statement statement = conn.createStatement();
+
+            String query = "Select * from foundItems where ArticleName like '%"+ArticleName+"%'";
+            
+            ResultSet rs = statement.executeQuery(query);
+            rs.next();
+            String articleName = rs.getString("ArticleName");
+            String articleBrand = rs.getString("ArticleBrand");
+            String category = rs.getString("Category");
+            String FoundDate = rs.getString("FoundDate");
+            String FoundLocation = rs.getString("FoundLocation");
+            String PersonToContact = rs.getString("PersonToContact");
+            String ContactNumber = rs.getString("ContactNumber");
+            
+            jTextArea1.setText("");
+            
+            jTextArea1.append("Name: " + articleName+ "\n");
+            jTextArea1.append("Article Brand: "+articleBrand + "\n");
+            jTextArea1.append("Category:" + category + "\n");
+            jTextArea1.append("Found Date: "+FoundDate +"\n");
+            jTextArea1.append("Found Location: "+FoundLocation+"\n");
+            
+            confirmButton.setEnabled(true);
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ReportFound.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ReportFound.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_ResultListValueChanged
 
@@ -364,7 +401,7 @@ public class FindLost extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
