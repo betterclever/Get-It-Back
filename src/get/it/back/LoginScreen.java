@@ -47,15 +47,18 @@ public class LoginScreen extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Get It Back!");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 310, 85));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Username:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 130, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Password:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 120, 30));
 
@@ -65,9 +68,10 @@ public class LoginScreen extends javax.swing.JFrame {
                 usernameTFActionPerformed(evt);
             }
         });
-        getContentPane().add(usernameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 260, 30));
+        getContentPane().add(usernameTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 260, 40));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 51));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +86,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 passwordPFActionPerformed(evt);
             }
         });
-        getContentPane().add(passwordPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 260, 30));
+        getContentPane().add(passwordPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 260, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/get/it/back/pattern-wallpaper-small.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 340));
