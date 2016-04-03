@@ -94,8 +94,86 @@ public class LoginScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+	//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            String username = usernameTF.getText();
+            char passw[] = passwordPF.getPassword();
+            String password = new String(passw);
+            Class.forName("com.mysql.jdbc.Driver");
+            String uid = "root";
+            String pwd = "clever";
+            String dbURL = "jdbc:mysql://localhost:3306/getitback";
+            Connection conn = DriverManager.getConnection(dbURL, uid, pwd);
+            Statement statement = conn.createStatement();
+            String query = "Select password from loginTable where username='" + username + "'";
+            ResultSet rs = statement.executeQuery(query);
+            if((rs.next())){
+                String pwd2 = rs.getString("password");
+                if(pwd2.equals(password)){
+                    JPanel jPanel = new JPanel();
+                    JButton btn1 = new JButton();
+                    btn1.setText("Report a found item");
+                    btn1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            btn1ActionPerformed(evt);
+                        }
+
+                        private void btn1ActionPerformed(ActionEvent evt) {
+                            java.awt.EventQueue.invokeLater(new Runnable() {
+                                public void run() {
+                                    new ReportFound().setVisible(true);
+                                    dispose();
+                                }
+                            });
+                        }
+                    });
+                    JButton btn2 = new JButton();
+                    btn2.setText("Search for Lost Files");
+                    btn2.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            btn2ActionPerformed(evt);
+                        }
+
+                        private void btn2ActionPerformed(ActionEvent evt) {
+                            java.awt.EventQueue.invokeLater(new Runnable() {
+                                public void run() {
+                                    new FindLost().setVisible(true);
+                                    dispose();
+                                }
+                            });
+                        }
+                    });
+                    jPanel.add(btn1);
+                    jPanel.add(btn2);
+                    jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
+                    String[] option2 = new String[]{"Cancel"};
+                    JOptionPane.showOptionDialog(this, jPanel, "Select Choice",
+                            JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+                            null, option2, option2[0]);
+
+                }
+
+            }
+
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+=======
+        
+>>>>>>> 94b0eebfe0d1d8550fa32fa28a12bc7ce67cab3a
+=======
+        
+>>>>>>> b6d1f75143d61fc5f24dcfe7b9d1e4ad8317ad81
+=======
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+>>>>>>> a87f92f937b088355439354e710c2186bd7a73e2
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordPFActionPerformed
@@ -113,7 +191,19 @@ public class LoginScreen extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+=======
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+>>>>>>> 94b0eebfe0d1d8550fa32fa28a12bc7ce67cab3a
+=======
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+>>>>>>> b6d1f75143d61fc5f24dcfe7b9d1e4ad8317ad81
+=======
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+>>>>>>> a87f92f937b088355439354e710c2186bd7a73e2
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
