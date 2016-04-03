@@ -389,14 +389,50 @@ public class ReportFound extends javax.swing.JFrame {
 
     private void ResultListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ResultListValueChanged
         // TODO add your handling code here:
+        String ArticleName = ResultList.getSelectedValue();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            String uid = "root";
+            String pwd = "clever";
+            String dbURL = "jdbc:mysql://localhost/getitback";
+            Connection conn = DriverManager.getConnection(dbURL, uid, pwd);
+            Statement statement = conn.createStatement();
+
+            String query = "Select * from LostItems where ArticleName like '%"+ArticleName+"%'";
+            
+            ResultSet rs = statement.executeQuery(query);
+            rs.next();
+            String articleName = rs.getString("ArticleName");
+            String articleBrand = rs.getString("ArticleBrand");
+            String category = rs.getString("Category");
+            String LostDate = rs.getString("LostDate");
+            String LostLocation = rs.getString("LostLocation");
+            String PersonToContact = rs.getString("PersonToContact");
+            String ContactNumber = rs.getString("ContactNumber");
+            
+            jTextArea1.setText("");
+            
+            jTextArea1.append("Name: " + articleName+ "\n");
+            jTextArea1.append("Article Brand: "+articleBrand + "\n");
+            jTextArea1.append("Category:" + category + "\n");
+            jTextArea1.append("Lost Date: "+LostDate +"\n");
+            jTextArea1.append("Lost Location: "+LostLocation+"\n");
+            
+            ConfirmButton.setEnabled(true);
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ReportFound.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ReportFound.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
     }//GEN-LAST:event_ResultListValueChanged
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         // TODO add your handling code here:
-
-
+        
+        
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
     /**
@@ -406,7 +442,7 @@ public class ReportFound extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
