@@ -280,7 +280,7 @@ public class ReportFound extends javax.swing.JFrame {
             BrandName = BrandName.replaceAll("'", "''");
             String query = "SELECT * from lostItems where ArticleName like '%" + ArticleName + "%' and Category ='" + Category + "'";
             if (!BrandName.equals("")) {
-                query = query + "and ArticleBrand like '" + BrandName + "%'";
+                query = query + "and ArticleBrand like '%" + BrandName + "%'";
             } else {
                 BrandName = "Not Specified";
             }
