@@ -31,6 +31,9 @@ public class FindLost extends javax.swing.JFrame {
     /**
      * Creates new form FindLost
      */
+    String person = "";
+    String pnumber = "";
+
     public FindLost() {
         initComponents();
     }
@@ -78,31 +81,31 @@ public class FindLost extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Find a Lost Item");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 734, 69));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Article Name");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 91, 145, 23));
 
-        articleNameTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        articleNameTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         getContentPane().add(articleNameTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 93, 243, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Select Category");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 120, 179, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Brand Name (Optional)");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 148, 265, 25));
 
-        CategoryCB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CategoryCB.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         CategoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Identity Proof", "Watch", "Mobile Phone", "Wallet/Purse", "Bags", "Others" }));
         CategoryCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,17 +114,17 @@ public class FindLost extends javax.swing.JFrame {
         });
         getContentPane().add(CategoryCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 121, 243, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Lost Date (Optional) DD-MM-YY");
+        jLabel6.setText("Lost Date (Optional) in DD-MM-YY Format");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 179, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Location where you lost it");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 207, 265, 25));
 
-        LocationTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LocationTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         LocationTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LocationTfActionPerformed(evt);
@@ -129,10 +132,10 @@ public class FindLost extends javax.swing.JFrame {
         });
         getContentPane().add(LocationTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 210, 243, -1));
 
-        brandTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        brandTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         getContentPane().add(brandTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 151, 243, -1));
 
-        LostDateTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LostDateTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         LostDateTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LostDateTfActionPerformed(evt);
@@ -141,7 +144,7 @@ public class FindLost extends javax.swing.JFrame {
         getContentPane().add(LostDateTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 180, 243, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 153));
         jButton1.setText("Search for Item");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +154,7 @@ public class FindLost extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 250, 225, -1));
 
-        ResultList.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ResultList.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         ResultList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         ResultList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -175,27 +178,32 @@ public class FindLost extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 304, 280, -1));
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 340, 258, 133));
 
         confirmButton.setBackground(new java.awt.Color(255, 102, 0));
-        confirmButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        confirmButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(255, 255, 153));
         confirmButton.setText("Confirm Item");
         confirmButton.setEnabled(false);
-        getContentPane().add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 491, 160, -1));
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 491, 129, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 102, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 153));
         jButton3.setText("Reset");
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 491, 71, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/get/it/back/still_alive_1920x1080.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 750, 560));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -222,12 +230,10 @@ public class FindLost extends javax.swing.JFrame {
             String query = "SELECT * from foundItems where ArticleName like '%" + ArticleName + "%' and Category ='" + Category + "'";
             if (!ArticleBrand.equals("")) {
                 query = query + "and ArticleBrand like '%" + ArticleBrand + "%'";
-            }
-            else {
+            } else {
                 ArticleBrand = "Not Specified";
             }
 
-            
             System.out.println(query);
             ResultSet rs = statement.executeQuery(query);
 
@@ -289,9 +295,9 @@ public class FindLost extends javax.swing.JFrame {
                         long randID = System.currentTimeMillis();
                         int a = 0;
                         for (int i = 0; i < 5; i++) {
-                            a = a*10 + new Random().nextInt(100);
+                            a = a * 10 + new Random().nextInt(100);
                         }
-                        randID/=a;
+                        randID /= a;
 
                         String addQuery = "Insert into LostItems values (" + randID + ",'" + nArticleName + "','" + nArticleBrand + "','" + Category + "','" + nDate + "','" + nLocation + "','" + nName + "'," + nNumber + ")";
 
@@ -316,7 +322,7 @@ public class FindLost extends javax.swing.JFrame {
                 rs.close();
                 statement.close();
                 conn.close();
-                
+
             }
             confirmButton.setEnabled(false);
         } catch (SQLException ex) {
@@ -332,7 +338,7 @@ public class FindLost extends javax.swing.JFrame {
 
     private void ResultListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ResultListValueChanged
         // TODO add your handling code here:
-        
+
         String ArticleName = ResultList.getSelectedValue();
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -342,8 +348,8 @@ public class FindLost extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection(dbURL, uid, pwd);
             Statement statement = conn.createStatement();
 
-            String query = "Select * from foundItems where ArticleName like '%"+ArticleName+"%'";
-            
+            String query = "Select * from foundItems where ArticleName like '%" + ArticleName + "%'";
+
             ResultSet rs = statement.executeQuery(query);
             rs.next();
             String articleName = rs.getString("ArticleName");
@@ -351,20 +357,19 @@ public class FindLost extends javax.swing.JFrame {
             String category = rs.getString("Category");
             String FoundDate = rs.getString("FoundDate");
             String FoundLocation = rs.getString("FoundLocation");
-            String PersonToContact = rs.getString("PersonToContact");
-            String ContactNumber = rs.getString("ContactNumber");
-            
+            person = rs.getString("PersonToContact");
+            pnumber = rs.getString("ContactNumber");
+
             jTextArea1.setText("");
-            
-            jTextArea1.append("Name: " + articleName+ "\n");
-            jTextArea1.append("Article Brand: "+articleBrand + "\n");
+
+            jTextArea1.append("Name: " + articleName + "\n");
+            jTextArea1.append("Article Brand: " + articleBrand + "\n");
             jTextArea1.append("Category:" + category + "\n");
-            jTextArea1.append("Found Date: "+FoundDate +"\n");
-            jTextArea1.append("Found Location: "+FoundLocation+"\n");
-            
+            jTextArea1.append("Found Date: " + FoundDate + "\n");
+            jTextArea1.append("Found Location: " + FoundLocation + "\n");
+
             confirmButton.setEnabled(true);
-            
-            
+
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ReportFound.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -380,6 +385,20 @@ public class FindLost extends javax.swing.JFrame {
     private void CategoryCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CategoryCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CategoryCBActionPerformed
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Do you confirm of the Ownership of the belongings?", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.NO_OPTION) {
+            System.out.println("No button clicked");
+        } else if (response == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(this, "Your Lost Items are with "+ person + ". Contact Number:" + pnumber);
+        } else if (response == JOptionPane.CLOSED_OPTION) {
+            System.out.println("JOptionPane closed");
+        }
+
+    }//GEN-LAST:event_confirmButtonActionPerformed
 
     /**
      * @param args the command line arguments

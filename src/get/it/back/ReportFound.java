@@ -27,6 +27,10 @@ import javax.swing.JTextField;
  */
 public class ReportFound extends javax.swing.JFrame {
 
+    
+    String person = "";
+    String pnumber = "";
+    
     /**
      * Creates new form ReportFound
      */
@@ -383,6 +387,15 @@ public class ReportFound extends javax.swing.JFrame {
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Do you confirm of having the item?", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.NO_OPTION) {
+            System.out.println("No button clicked");
+        } else if (response == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(this, "The Owner of Items is "+ person + ". Contact Number:" + pnumber);
+        } else if (response == JOptionPane.CLOSED_OPTION) {
+            System.out.println("JOptionPane closed");
+        }
         
         
     }//GEN-LAST:event_ConfirmButtonActionPerformed
