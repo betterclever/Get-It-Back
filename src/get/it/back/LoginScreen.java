@@ -46,7 +46,7 @@ public class LoginScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Get It Back!");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 310, 85));
@@ -83,6 +83,8 @@ public class LoginScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(passwordPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 260, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/get/it/back/pattern-wallpaper-small.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 340));
 
         pack();
