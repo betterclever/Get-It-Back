@@ -94,9 +94,7 @@ public class LoginScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-	//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             String username = usernameTF.getText();
             char passw[] = passwordPF.getPassword();
@@ -109,7 +107,10 @@ public class LoginScreen extends javax.swing.JFrame {
             Statement statement = conn.createStatement();
             String query = "Select password from loginTable where username='" + username + "'";
             ResultSet rs = statement.executeQuery(query);
-            if((rs.next())){
+            if(!(rs.next())){
+                System.out.println("Invalid Username");
+            }
+            else {
                 String pwd2 = rs.getString("password");
                 if(pwd2.equals(password)){
                     JPanel jPanel = new JPanel();
@@ -154,6 +155,9 @@ public class LoginScreen extends javax.swing.JFrame {
                             null, option2, option2[0]);
 
                 }
+                else {
+                    JOptionPane.showMessageDialog(this, "Incorrect Login Credentials. Try Again");
+                }
 
             }
 
@@ -164,16 +168,6 @@ public class LoginScreen extends javax.swing.JFrame {
             Logger.getLogger(LoginScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-=======
-        
->>>>>>> 94b0eebfe0d1d8550fa32fa28a12bc7ce67cab3a
-=======
-        
->>>>>>> b6d1f75143d61fc5f24dcfe7b9d1e4ad8317ad81
-=======
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
->>>>>>> a87f92f937b088355439354e710c2186bd7a73e2
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordPFActionPerformed
@@ -191,19 +185,7 @@ public class LoginScreen extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-=======
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
->>>>>>> 94b0eebfe0d1d8550fa32fa28a12bc7ce67cab3a
-=======
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
->>>>>>> b6d1f75143d61fc5f24dcfe7b9d1e4ad8317ad81
-=======
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
->>>>>>> a87f92f937b088355439354e710c2186bd7a73e2
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
