@@ -78,31 +78,31 @@ public class FindLost extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 153, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Find a Lost Item");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 734, 69));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Article Name");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 91, 145, 23));
 
-        articleNameTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        articleNameTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(articleNameTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 93, 243, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Select Category");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 120, 179, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Brand Name (Optional)");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 148, 265, 25));
 
-        CategoryCB.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        CategoryCB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CategoryCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Identity Proof", "Watch", "Mobile Phone", "Wallet/Purse", "Bags", "Others" }));
         CategoryCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,17 +111,17 @@ public class FindLost extends javax.swing.JFrame {
         });
         getContentPane().add(CategoryCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 121, 243, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Lost Date (Optional) in DD-MM-YY Format");
+        jLabel6.setText("Lost Date (Optional) DD-MM-YY");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 179, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Location where you lost it");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 207, 265, 25));
 
-        LocationTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        LocationTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LocationTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LocationTfActionPerformed(evt);
@@ -129,10 +129,10 @@ public class FindLost extends javax.swing.JFrame {
         });
         getContentPane().add(LocationTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 210, 243, -1));
 
-        brandTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        brandTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(brandTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 151, 243, -1));
 
-        LostDateTf.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        LostDateTf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LostDateTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LostDateTfActionPerformed(evt);
@@ -141,7 +141,7 @@ public class FindLost extends javax.swing.JFrame {
         getContentPane().add(LostDateTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 180, 243, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 153));
         jButton1.setText("Search for Item");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +151,7 @@ public class FindLost extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 250, 225, -1));
 
-        ResultList.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        ResultList.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         ResultList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         ResultList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -175,21 +175,21 @@ public class FindLost extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 304, 280, -1));
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 340, 258, 133));
 
         confirmButton.setBackground(new java.awt.Color(255, 102, 0));
-        confirmButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        confirmButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(255, 255, 153));
         confirmButton.setText("Confirm Item");
         confirmButton.setEnabled(false);
-        getContentPane().add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 491, 129, -1));
+        getContentPane().add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 491, 160, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 102, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 153));
         jButton3.setText("Reset");
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 491, 71, -1));
