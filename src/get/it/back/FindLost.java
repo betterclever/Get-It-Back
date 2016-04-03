@@ -223,7 +223,128 @@ public class FindLost extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        String ArticleName = articleNameTf.getText();
+        String Category = (String) CategoryCB.getSelectedItem();
+        String ArticleBrand = brandTf.getText();
+        String Location = LocationTf.getText();
+        String LostDate = LostDateTf.getText();
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            String uid = "root";
+            String pwd = "clever";
+            String dbURL = "jdbc:mysql://localhost/getitback";
+            Connection conn = DriverManager.getConnection(dbURL, uid, pwd);
+            Statement statement = conn.createStatement();
+
+            ArticleName = ArticleName.replaceAll("'", "''");
+            //Category = Category.replaceAll("'", "''");
+            ArticleBrand = ArticleBrand.replaceAll("'", "''");
+            String query = "SELECT * from foundItems where ArticleName like '%" + ArticleName + "%' and Category ='" + Category + "'";
+            if (!ArticleBrand.equals("")) {
+                query = query + "and ArticleBrand like '%" + ArticleBrand + "%'";
+            }
+            else {
+                ArticleBrand = "Not Specified";
+            }
+
+
+            System.out.println(query);
+            ResultSet rs = statement.executeQuery(query);
+
+            DefaultListModel listModel = new DefaultListModel();
+            if (!rs.next()) {
+                int response = JOptionPane.showConfirmDialog(this, "Item was not found. Try Another Search?", "Select a Choice", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.NO_OPTION) {
+                    int response2 = JOptionPane.showConfirmDialog(this, "Do you want to get notified when item is found?", "Select a Choice", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if (response2 == JOptionPane.YES_OPTION) {
+                        JPanel panel = new JPanel();
+                        JLabel details = new JLabel("Edit Details");
+                        Font titleFont = new Font("Segoe UI", Font.PLAIN, 24);
+                        details.setFont(titleFont);
+                        JLabel articleName = new JLabel("Article Name");
+                        JTextField articleNameTf = new JTextField();
+                        articleNameTf.setText(ArticleName);
+                        JLabel articleBrand = new JLabel("Article Brand");
+                        JTextField articleBrandTf = new JTextField();
+                        articleBrandTf.setText(ArticleBrand);
+                        JLabel date = new JLabel("Lost Date");
+                        JTextField dateTf = new JTextField();
+                        dateTf.setText(LostDate);
+                        JLabel LostLocation = new JLabel("Lost Location");
+                        JTextField LostLocationTf = new JTextField();
+                        LostLocationTf.setText(Location);
+                        JLabel Name = new JLabel("Your Name");
+                        JTextField NameTf = new JTextField();
+                        LostLocationTf.setText(Location);
+                        JLabel Number = new JLabel("Your Phone Number");
+                        JTextField NumberTf = new JTextField();
+                        LostLocationTf.setText(Location);
+                        panel.add(details);
+                        panel.add(articleName);
+                        panel.add(articleNameTf);
+                        panel.add(articleBrand);
+                        panel.add(articleBrandTf);
+                        panel.add(date);
+                        panel.add(dateTf);
+                        panel.add(LostLocation);
+                        panel.add(LostLocationTf);
+                        panel.add(Name);
+                        panel.add(NameTf);
+                        panel.add(Number);
+                        panel.add(NumberTf);
+
+                        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+                        String[] options = new String[]{"OK", "Cancel"};
+                        int option = JOptionPane.showOptionDialog(this, panel, "Edit Deatails",
+                                JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+                                null, options, options[1]);
+
+                        String nArticleName = articleNameTf.getText();
+                        String nArticleBrand = articleBrandTf.getText();
+                        String nDate = dateTf.getText();
+                        String nLocation = LostLocationTf.getText();
+                        String nName = NameTf.getText();
+                        String nNumber = NumberTf.getText();
+                        long randID = System.currentTimeMillis();
+                        int a = 0;
+                        for (int i = 0; i < 5; i++) {
+                            a = a*10 + new Random().nextInt(100);
+                        }
+                        randID/=a;
+
+                        String addQuery = "Insert into LostItems values (" + randID + ",'" + nArticleName + "','" + nArticleBrand + "','" + Category + "','" + nDate + "','" + nLocation + "','" + nName + "'," + nNumber + ")";
+
+                        System.out.println(addQuery);
+
+                        statement.executeUpdate(addQuery);
+                        JOptionPane.showMessageDialog(null, "You will be notified if the item is found on your number " + nNumber + " .Note down your ItemId:" + randID);
+
+                    }
+                }
+            } else {
+                String articleName = rs.getString("ArticleName");
+                listModel.addElement(articleName);
+                while (rs.next()) {
+                    articleName = rs.getString("ArticleName");
+                    listModel.addElement(articleName);
+                }
+
+                ResultList.setModel(listModel);
+                ResultList.setEnabled(true);
+
+                rs.close();
+                statement.close();
+                conn.close();
+
+            }
+            confirmButton.setEnabled(false);
+        } catch (SQLException ex) {
+            Logger.getLogger(FindLost.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FindLost.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void LocationTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocationTfActionPerformed
@@ -233,6 +354,7 @@ public class FindLost extends javax.swing.JFrame {
     private void ResultListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ResultListValueChanged
         // TODO add your handling code here:
         
+
     }//GEN-LAST:event_ResultListValueChanged
 
     /**
@@ -242,7 +364,7 @@ public class FindLost extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
